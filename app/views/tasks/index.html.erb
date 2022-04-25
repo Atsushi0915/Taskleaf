@@ -11,7 +11,7 @@
   <tbody>
     <% @task.each do |task| %>
       <%= tag.tr %>
-        <%= tag.td task.name %>
+        <%= tag.td link_to task.name, task %>
         <%= tag.td task.created_at %>
     <% end %>
   <tbody>
