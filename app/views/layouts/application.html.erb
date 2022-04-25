@@ -10,13 +10,22 @@
   </head>
 
   <body>
-    <div class="app-title navbar-expand-md navbar-light.bg-light">
-      <div class="navbar brand">
-        Taskleaf
+    <header>
+      <div class="app-title navbar-expand-md navbar-light.bg-light">
+        <div class="navbar brand">
+          Taskleaf
+        </div>
       </div>
-    </div>
-    <div class="container">
-      <%= yield %>
-    </div>
+    </header>
+    <main>
+      <div class="container">
+        <% if flash.notice.present? %>
+          <div class="alert alert-success">
+            <%= flash.notice %>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
